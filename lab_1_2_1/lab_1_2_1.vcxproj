@@ -105,6 +105,7 @@
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
+      <AdditionalIncludeDirectories>$(ProjectDir)\headers;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -127,15 +128,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="fixes.cpp" />
-    <ClCompile Include="functions.cpp" />
     <ClCompile Include="lab_1_2_1.cpp" />
-    <ClCompile Include="menu.cpp" />
+    <ClCompile Include="source\fixes.cpp" />
+    <ClCompile Include="source\functions.cpp" />
+    <ClCompile Include="source\menu.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="fixes.h" />
-    <ClInclude Include="functions.h" />
-    <ClInclude Include="menu.h" />
+    <ClInclude Include="headers\fixes.h" />
+    <ClInclude Include="headers\functions.h" />
+    <ClInclude Include="headers\menu.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

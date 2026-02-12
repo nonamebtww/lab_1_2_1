@@ -18,24 +18,24 @@
     <ClCompile Include="lab_1_2_1.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="functions.cpp">
+    <ClCompile Include="source\fixes.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="fixes.cpp">
+    <ClCompile Include="source\functions.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="menu.cpp">
+    <ClCompile Include="source\menu.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="functions.h">
+    <ClInclude Include="headers\fixes.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="fixes.h">
+    <ClInclude Include="headers\functions.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="menu.h">
+    <ClInclude Include="headers\menu.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
