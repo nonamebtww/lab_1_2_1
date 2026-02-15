@@ -50,8 +50,13 @@ int menu_f3() {
 	void (*f)();
 
 	cout <<
-		"1. f1" << endl <<
-		"2. f2" << endl <<
+		"1. Исправление для задания 3.1" << endl <<
+		"2. Исправление для задания 3.2" << endl <<
+		"3. Исправление для задания 3.3" << endl <<
+		"4. Исправление для задания 3.4" << endl <<
+		"5. Исправление для задания 3.5" << endl <<
+		"6. Исправление для задания 3.6" << endl <<
+		"7. Исправление для задания 3.7" << endl <<
 		"Выберите функцию для проверки: "
 		;
 	cin >> function_number;
@@ -60,9 +65,31 @@ int menu_f3() {
 	case 1:
 		f = fix1;
 		break;
+
 	case 2:
 		f = fix2;
 		break;
+
+	case 3:
+		f = fix3;
+		break;
+
+	case 4:
+		f = fix4;
+		break;
+
+	case 5:
+		f = fix5;
+		break;
+
+	case 6:
+		f = fix6;
+		break;
+
+	case 7:
+		f = fix7;
+		break;
+
 	default:
 		cout << "Выбран неизвестный номер функции" << endl;
 		return 0;

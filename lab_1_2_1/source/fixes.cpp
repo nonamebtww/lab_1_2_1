@@ -1,59 +1,139 @@
-// fix 1
 #include <iostream>
-
-// добавили возвращаемый тип данных "void"
-void fix1() {
-    int n = 10;
-
-	// добавили тип данных "int" для i
-	// изменили условие с "n div 2" на "i < n / 2"
-	// убрали ";" после "for (...)"
-	for (int i = 1; i < n / 2; i++)
-		// добавили круглые скобки для условия "if"
-		// заменили "=" на "==" для сравнения
-		if (n % i == 0)
-			// добавили "std::" для использования функции "cout"
-			// добавили "std::endl" для переноса строки после вывода
-			std::cout << i << std::endl;
-
-	// убали лишнюю "}"
-}
-
-// fix 2
-#include <iostream> 
+#include <cmath>
+#include <vector>
+#include <cstdlib>
+#include <ctime>
 
 using namespace std;
 
-// добавлен возвращаемый тип данных "void"
-void fix2() {
-    // убраны лишние переменные: I, fn
-    // установлено значение "1" для "y"
-    // заменён "int" на "long long" для больших чисел
+void fix1() {
     int n;
-    long long y = 1;
+    cout << "--- Задача 1: Делители числа n ---" << endl;
+    cout << "Введите натуральное число n: ";
+    cin >> n;
 
-	// заменён "cout << n" на "cin >> n" для получения входного значения от пользователя
+    cout << "Делители числа " << n << ": ";
+    for (int i = 1; i <= n; ++i) {
+        if (n % i == 0) {
+            cout << i << " ";
+        }
+    }
+
+    cout << endl << endl;
+}
+
+void fix2() {
+    int n;
+    cout << "--- Задача 2: Двойной факториал (n!!) ---" << endl;
+    cout << "Введите натуральное число n: ";
+    cin >> n;
+
+    double y = 1.0;
+    for (int i = n; i > 0; i -= 2) {
+        y *= i;
+    }
+
+    cout << "y = " << y << endl << endl;
+}
+
+void fix3() {
+    int n;
+    cout << "--- Задача 3: Произведение ряда ---" << endl;
     cout << "Введите n: ";
     cin >> n;
 
-	// заменено условие "if (n % 2 <> 0)" на "if (n % 2 != 0)"
-    if (n % 2 != 0) {
-        // установлен тип "int" для "i"
-		// исправлено условие цикла с "n" на "i <= n"
-        for (int i = 1; i <= n; i += 2) {
-            y *= i;
+    double p = 1.0;
+    for (int i = 1; i <= n; ++i) {
+        if (i % 2 != 0) {
+            p *= (double)(i + 1) / i;
         }
-
-    }
-    else {
-		// установлен тип "int" для "i"
-        // убрат лишний код
-        for (int i = 1; i <= n; i++) {
-            y *= i;
+        else {
+            p *= (double)i / (i + 1);
         }
     }
 
+    cout << "Произведение p = " << p << endl << endl;
+}
 
-    // исправлен вывод
-    cout << "Результат y = " << y << endl;
+void fix4() {
+    int n;
+    double x;
+    cout << "--- Задача 4: Двойная сумма ((x+k)/m) ---" << endl;
+    cout << "Введите n: ";
+    cin >> n;
+    cout << "Введите x: ";
+    cin >> x;
+
+    double total = 0.0;
+
+    for (int k = 1; k <= n; ++k) {
+        double inner = 0.0;
+        for (int m = k; m <= n; ++m) {
+            inner += (x + k) / m;
+        }
+
+        total += inner;
+    }
+
+    cout << "Результат = " << total << endl << endl;
+}
+
+void fix5() {
+    int n;
+    cout << "--- Задача 5: Двойная сумма (1/(i+2j)) ---" << endl;
+    cout << "Введите n: ";
+    cin >> n;
+
+    double total = 0.0;
+
+    for (int i = 1; i <= n; ++i) {
+        for (int j = 1; j <= i; ++j) {
+            total += 1.0 / (i + 2 * j);
+        }
+    }
+
+    cout << "Результат = " << total << endl << endl;
+}
+
+void fix6() {
+    srand(static_cast<unsigned int>(time(0)));
+
+    const int N = 200;
+    vector<double> arr(N);
+
+    cout << "--- Задача 6: Локальные максимумы ---" << endl;
+    cout << "Генерация массива из " << N << " случайных чисел..." << endl;
+
+    for (int i = 0; i < N; ++i) {
+        arr[i] = static_cast<double>(rand()) / RAND_MAX * 100.0;
+    }
+
+    cout << "Первые 10 чисел: ";
+    for (int i = 0; i < 10; ++i) cout << arr[i] << " ";
+    cout << "..." << endl;
+
+    int count = 0;
+
+    for (int i = 1; i < N - 1; ++i) {
+        if (arr[i] > arr[i - 1] && arr[i] > arr[i + 1]) {
+            count++;
+        }
+    }
+
+    cout << "Количество чисел, больших своих соседей: " << count << endl << endl;
+}
+
+void fix7() {
+    cout << "--- Задача 7: Произведение П(1/(i + j^2)) ---" << endl;
+
+    double p = 1.0;
+    int limit = 20;
+
+    for (int i = 1; i <= limit; ++i) {
+        for (int j = 1; j <= limit; ++j) {
+            p *= 1.0 / (i + pow(j, 2));
+        }
+    }
+
+    cout << "Результат произведения: " << p << endl << endl;
 }

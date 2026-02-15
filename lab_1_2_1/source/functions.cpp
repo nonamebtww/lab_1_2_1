@@ -45,5 +45,5 @@ double f2(double x) {
 
 // f4
 bool f4(double x) {
-	return -2 < x < 2;
+	return -2 < x && x < 2;
 }
